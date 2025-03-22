@@ -36,33 +36,34 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
 ## Tree of components
+
 - Home
-    - Logo
-    - StartNewGameButton
-    - LoadSavedGameButton
-    
+  - Logo
+  - StartNewGameButton
+  - LoadSavedGameButton
 - Map
-    - pages of grids
-    - Player can walk
-    - certain cells interact with Player
+  - pages of grids
+  - Player can walk
+  - certain cells interact with Player
 - Battle
-    - PlayerView
-    - NPCView
-    - InfoTab
+  - PlayerView
+  - NPCView
+  - InfoTab
 
 ## Data Types
+
 - MapGrid
-    - x,y,sprite#,onPlayerVisit
+
+  - x,y,sprite#,onPlayerVisit
 
 - Player
-    - currentX,Y
-    - Health (0 - 100)
-    - Strength (0 - 100)
-    - Magic (0 - 100)
+  - currentX,Y
+  - Health (0 - 100)
+  - Strength (0 - 100)
+  - Magic (0 - 100)
 - Battle
-    - enemy
-        - same as player
-    - currentTurn
-    - winner
-    - 
-    // //
+  - enemy
+    - same as player
+  - currentTurn
+  - winner
+  - // //

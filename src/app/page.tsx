@@ -1,36 +1,31 @@
 "use client";
 import { useEffect, useState } from "react";
-
+import { VT323 } from "next/font/google";
+const vt323 = VT323({
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+});
 const CONSTS = {
   CONTINUE_BUTTON: "Continue",
   LICENSE_INFO:
     "This app is open-source and available for use, modification, and distribution by anyone for any purpose.",
   START_BUTTON: "Start",
-  TITLE: "FF2",
+  TITLE: "AGCB",
 };
 
 const Title = (
-  <div>
-    <h1 className="h-1/2 flex items-center">{CONSTS.TITLE}</h1>
+  <div className="h-full flex justify-center items-center text-9xl">
+    <h1 className={`${vt323.className} border-8`}>{CONSTS.TITLE}</h1>
   </div>
 );
 
 const StartButton: React.FC<{ current: boolean }> = ({ current }) => {
   return (
     <>
-      <button className="min-w-30 text-left">{`${CONSTS.START_BUTTON.toUpperCase()} ${
-        current ? "👈" : ""
-      }`}</button>
-    </>
-  );
-};
-
-const TestComponent = () => {
-  return (
-    <>
-      <span>33333</span>
-      <span>1</span>
-      <span>3</span>
+      <button
+        className={`${vt323.className} min-w-50 text-left text-4xl`}
+      >{`${CONSTS.START_BUTTON.toUpperCase()} ${current ? "👈" : ""}`}</button>
     </>
   );
 };
@@ -38,13 +33,19 @@ const TestComponent = () => {
 const ContinueButton: React.FC<{ current: boolean }> = ({ current }) => {
   return (
     <>
-      <button className="min-w-30 text-left">{`${CONSTS.CONTINUE_BUTTON.toUpperCase()} ${
+      <button
+        className={`${vt323.className} min-w-50 text-left text-4xl`}
+      >{`${CONSTS.CONTINUE_BUTTON.toUpperCase()} ${
         current ? "👈" : ""
       }`}</button>
     </>
   );
 };
-const LicenseInfo = <span>{CONSTS.LICENSE_INFO}</span>;
+const LicenseInfo = (
+  <div className="bg-cyan-700 h-10 p-10 flex justify-center items-center">
+    <span className={`${vt323.className}`}>{CONSTS.LICENSE_INFO}</span>
+  </div>
+);
 
 export default function Home() {
   const [selection, setSelection] = useState("start");
@@ -64,12 +65,10 @@ export default function Home() {
     };
   }, []);
   return (
-    <div className="border-4 border-red-500 w-screen h-screen flex flex-col items-center gap-4">
-      <div className="bg-gradient-to-r from-purple-600 to-blue-400 h-75 w-full ">
-        {Title}
-      </div>
-      <div className="border-4 border-blue-400">
-        <div className="border-4 border-yellow-400 flex justify-around">
+    <div className="flex bg-amber-800 w-screen h-screen flex-col items-center gap-4">
+      <div className="min-w-30 h-75 w-full ">{Title}</div>
+      <div className="h-80 flex-10/12 flex-col place-content-end">
+        <div className="border h-50 flex justify-around items-start">
           {<StartButton current={selection === "start"} />}
           {<ContinueButton current={selection === "continue"} />}
         </div>
