@@ -1,51 +1,10 @@
 "use client";
 import { useEffect, useState } from "react";
-import { VT323 } from "next/font/google";
-const vt323 = VT323({
-  weight: "400",
-  subsets: ["latin"],
-  display: "swap",
-});
-const CONSTS = {
-  CONTINUE_BUTTON: "Continue",
-  LICENSE_INFO:
-    "This app is open-source and available for use, modification, and distribution by anyone for any purpose.",
-  START_BUTTON: "Start",
-  TITLE: "AGCB",
-};
-
-const Title = (
-  <div className="h-full flex justify-center items-center text-9xl">
-    <h1 className={`${vt323.className} border-8`}>{CONSTS.TITLE}</h1>
-  </div>
-);
-
-const StartButton: React.FC<{ current: boolean }> = ({ current }) => {
-  return (
-    <>
-      <button
-        className={`${vt323.className} min-w-50 text-left text-4xl`}
-      >{`${CONSTS.START_BUTTON.toUpperCase()} ${current ? "👈" : ""}`}</button>
-    </>
-  );
-};
-
-const ContinueButton: React.FC<{ current: boolean }> = ({ current }) => {
-  return (
-    <>
-      <button
-        className={`${vt323.className} min-w-50 text-left text-4xl`}
-      >{`${CONSTS.CONTINUE_BUTTON.toUpperCase()} ${
-        current ? "👈" : ""
-      }`}</button>
-    </>
-  );
-};
-const LicenseInfo = (
-  <div className="bg-cyan-700 h-10 p-10 flex justify-center items-center">
-    <span className={`${vt323.className}`}>{CONSTS.LICENSE_INFO}</span>
-  </div>
-);
+// components
+import ContinueButton from "./components/buttons/ContinueButton";
+import StartButton from "./components/buttons/StartButton";
+import Title from "./components/Title";
+import LicenseInfo from "./components/LicenseInfo";
 
 export default function Home() {
   const [selection, setSelection] = useState("start");
