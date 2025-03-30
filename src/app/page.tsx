@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import { redirect } from "next/navigation";
 // components
 import ContinueButton from "./components/buttons/ContinueButton";
 import StartButton from "./components/buttons/StartButton";
@@ -14,6 +15,8 @@ export default function Home() {
         setSelection("start");
       } else if (event.key === "ArrowRight") {
         setSelection("continue");
+      } else if (event.key === "Enter") {
+        redirect("StoryStart");
       }
     };
 
@@ -24,7 +27,7 @@ export default function Home() {
     };
   }, []);
   return (
-    <div className="flex bg-amber-800 w-screen h-screen flex-col items-center gap-4">
+    <div className="flex bg-gray-700 w-screen h-screen flex-col items-center gap-4">
       <div className="min-w-30 h-75 w-full ">{Title}</div>
       <div className="h-80 flex-10/12 flex-col place-content-end">
         <div className="border h-50 flex justify-around items-start">
