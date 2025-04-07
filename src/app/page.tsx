@@ -28,7 +28,9 @@ export default function Home() {
   }, []);
   return (
     <div className="flex bg-gray-700 w-screen h-screen flex-col items-center gap-4">
-      <div className="min-w-30 h-75 w-full ">{Title}</div>
+      <div className="min-w-30 h-75 w-full ">
+        <Title />
+      </div>
       <div className="h-80 flex-10/12 flex-col place-content-end">
         <div className="border h-50 flex justify-around items-start">
           {<StartButton current={selection === "start"} />}
