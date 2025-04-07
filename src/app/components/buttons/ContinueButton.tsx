@@ -1,4 +1,4 @@
-import CONSTS from "@/app/CONSTS";
+import CONSTS from "@/app/helpers/CONSTS";
 import vt323 from "@/app/fonts/Vt323";
 const ContinueButton: React.FC<{ current: boolean }> = ({ current }) => {
   return (

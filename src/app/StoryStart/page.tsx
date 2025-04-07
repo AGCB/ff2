@@ -1,4 +1,4 @@
-import CONSTS from "../CONSTS";
+import CONSTS from "../helpers/CONSTS";
 import Typewriter from "../components/TypeWriter";
 import vt323 from "../fonts/Vt323";
 export default function StoryStart() {

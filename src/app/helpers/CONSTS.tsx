@@ -2,6 +2,14 @@ const CONSTS = {
   CONTINUE_BUTTON: "Continue",
   LICENSE_INFO:
     "This app is open-source and available for use, modification, and distribution by anyone for any purpose.",
+  PLAYER_OPTION_TYPES: {
+    PLAYER_TYPE_PROGRAMMER: "programmer",
+    PLAYER_TYPE_MAMMAL: "mammal",
+    PLAYER_TYPE_BOOKWORM: "bookworm",
+    PLAYER_TYPE_SKATER: "skater",
+    PLAYER_TYPE_ASTROPHYSICIST: "astrophysicist",
+    PLAYER_TYPE_GARDENER: "gardener",
+  },
   START_BUTTON: "Start",
   TITLE: "AGCB",
   STORY_START:

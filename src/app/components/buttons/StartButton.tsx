@@ -1,7 +1,8 @@
 import { useRef, useEffect } from "react";
 import { redirect } from "next/navigation";
-import CONSTS from "@/app/CONSTS";
+import CONSTS from "@/app/helpers/CONSTS";
 import vt323 from "@/app/fonts/Vt323";
+
 const StartButton: React.FC<{ current: boolean }> = ({ current }) => {
   const handleSubmit = (e: React.MouseEvent<HTMLElement> | React.FormEvent) => {
     console.log("!!! here is the event", e);
