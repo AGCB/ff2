@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import vt323 from "../fonts/Vt323";
 import CONSTS from "../helpers/CONSTS";
 import { atom, useAtom } from "jotai";
@@ -59,17 +59,22 @@ const PlayerRow: React.FC<PlayerOptionType> = ({
 
 const SelectFirstPlayer = () => {
   const [selected, setSelected] = useState(0);
+  const selectedRef = useRef(selected);
 
   useEffect(() => {
+    selectedRef.current = selected;
+  });
+  useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
+      const current = selectedRef.current;
       if (event.key === "ArrowUp") {
         console.log("!!! KEY DOWN");
-        if (selected > 0) {
-          setSelected(selected - 1);
+        if (current > 0) {
+          setSelected(current - 1);
         }
       } else if (event.key === "ArrowDown") {
-        if (selected < 5) {
-          setSelected(selected + 1);
+        if (current < 5) {
+          setSelected(current + 1);
         }
       }
     };
@@ -79,7 +84,7 @@ const SelectFirstPlayer = () => {
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [selected]);
+  }, []);
 
   return (
     <>
