@@ -1,43 +1,22 @@
 "use client";
 import { useEffect, useState } from "react";
-import { redirect } from "next/navigation";
-// components
-import ContinueButton from "./components/buttons/ContinueButton";
-import StartButton from "./components/buttons/StartButton";
-import Title from "./components/Title";
-import LicenseInfo from "./components/LicenseInfo";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
-  const [selection, setSelection] = useState("start");
-  useEffect(() => {
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "ArrowLeft") {
-        setSelection("start");
-      } else if (event.key === "ArrowRight") {
-        setSelection("continue");
-      } else if (event.key === "Enter") {
-        redirect("StoryStart");
-      }
-    };
-
-    window.addEventListener("keydown", handleKeyDown);
-
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, []);
+  const router = useRouter();
   return (
-    <div className="flex bg-gray-700 w-screen h-screen flex-col items-center gap-4">
-      <div className="min-w-30 h-75 w-full ">
-        <Title />
-      </div>
-      <div className="h-80 flex-10/12 flex-col place-content-end">
-        <div className="border h-50 flex justify-around items-start">
-          {<StartButton current={selection === "start"} />}
-          {<ContinueButton current={selection === "continue"} />}
-        </div>
-        {LicenseInfo}
-      </div>
+    <div className="flex w-screen h-screen flex-col items-center border-3 border-red-400">
+      <div onClick={() => router.push("minesweeper")}>Minesweeper</div>
+      <Link href="/ffl">
+        <span>ffl</span>
+      </Link>
+      <Link href="/about">
+        <span>about</span>
+      </Link>
+      <Link href="/react-three-fiber">
+        <span>rtf</span>
+      </Link>
     </div>
   );
 }
