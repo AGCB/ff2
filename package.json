@@ -9,11 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-three/drei": "^10.0.7",
+    "@react-three/fiber": "^9.1.2",
     "jotai": "^2.12.2",
     "next": "15.2.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "save-dev": "^0.0.1-security"
+    "save-dev": "^0.0.1-security",
+    "three": "^0.176.0",
+    "three-stdlib": "^2.35.16"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
@@ -21,6 +25,7 @@
     "@types/node": "^20",
     "@types/react": "^19.1.0",
     "@types/react-dom": "^19",
+    "@types/three": "^0.176.0",
     "eslint": "^9",
     "eslint-config-next": "15.2.2",
     "tailwindcss": "^4",

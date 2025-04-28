@@ -94,7 +94,7 @@ const Cell = ({ cellData }: { cellData: CellType }) => {
         ? renderHidden()
         : renderThreatLevel(cellData.threatLevel);
 
-    return <span className="text-[5px]">{chooseCellRenderer(cellData)}</span>;
+    return <span className="text-xl">{chooseCellRenderer(cellData)}</span>;
   };
   const handleClick = (
     e: React.MouseEvent<HTMLElement>,
@@ -160,7 +160,7 @@ const Cell = ({ cellData }: { cellData: CellType }) => {
     <div
       onContextMenu={(e) => handleContextMenu(e, cellData)}
       onClick={(e) => handleClick(e, cellData)}
-      className={`${"border-2 border-gray-400"} flex flex-col items-center p-2 w-5 h-5 md:w-7 md:h-7`}
+      className={`${"border-2 border-gray-400"} flex flex-col items-center p-2 w-10 h-10 text-xl`}
     >
       {renderCell(cellData)}
     </div>
