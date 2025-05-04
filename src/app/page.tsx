@@ -10,6 +10,7 @@ export default function Home() {
       <div onClick={() => router.push("react-three-fiber")}>
         react-three-fiber-sample
       </div>
+      <div onClick={() => router.push("cth/")}>CTH</div>
       <div></div>
     </div>
   );
