@@ -12,13 +12,57 @@ type Params = {
   slug: string;
 };
 
+const renderGenerateCharacteristicsPage = () => {
+  return (
+    <div>
+      <span>renderGenerateCharacteristicsPage</span>
+    </div>
+  );
+};
+
+const renderDetermineOccupationPage = () => {
+  return (
+    <div>
+      <span>renderGenerateCharacteristicsPage</span>
+    </div>
+  );
+};
+
+const renderCreateBackstoryPage = () => {
+  return (
+    <div>
+      <span>renderCreateBackstoryPage</span>
+    </div>
+  );
+};
+
+const renderDecideSkillsAndAllocatePointsPage = () => {
+  return (
+    <div>
+      <span>renderDecideSkillsAndAllocatePointsPage</span>
+    </div>
+  );
+};
+
 const renderInvestigatorCreationPage = (
   label: string
 ): React.ReactElement | undefined => {
   let output;
   switch (label) {
     case "Generate Characteristics":
-      output = <span>23423432</span>;
+      output = renderGenerateCharacteristicsPage();
+      break;
+    case "Determine Occupation":
+      output = renderDetermineOccupationPage();
+      break;
+    case "Decide Skills and Allocate Points":
+      output = renderDecideSkillsAndAllocatePointsPage();
+      break;
+    case "Create Backstory":
+      output = renderCreateBackstoryPage();
+      break;
+    case "Equip Investigator":
+      output = renderCreateBackstoryPage();
       break;
     default:
       break;
