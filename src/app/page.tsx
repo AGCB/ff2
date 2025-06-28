@@ -11,6 +11,7 @@ export default function Home() {
         react-three-fiber-sample
       </div>
       <div onClick={() => router.push("cth/")}>CTH</div>
+      <div onClick={() => router.push("book/")}>book</div>
       <div></div>
     </div>
   );
